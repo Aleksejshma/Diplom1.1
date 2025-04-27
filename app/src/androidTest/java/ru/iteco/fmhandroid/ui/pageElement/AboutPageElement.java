@@ -11,22 +11,41 @@ import androidx.test.espresso.ViewInteraction;
 import ru.iteco.fmhandroid.R;
 
 public class AboutPageElement {
-    public static ViewInteraction privacyPolicyView = onView(
+    private final ViewInteraction privacyPolicyView = onView(
             allOf(withId(R.id.about_privacy_policy_label_text_view), withText("Privacy Policy:"),
                     isDisplayed()));
 
-    public static int privacyPolicyViewId = R.id.about_privacy_policy_label_text_view;
+    private final int privacyPolicyViewId = R.id.about_privacy_policy_label_text_view;
 
-    public static ViewInteraction termsOfUseView = onView(
+    private final ViewInteraction termsOfUseView = onView(
             allOf(withId(R.id.about_terms_of_use_label_text_view), withText("Terms of use:"),
                     isDisplayed()));
 
-    public static ViewInteraction iTecoView = onView(
+    private final ViewInteraction iTecoView = onView(
             allOf(withId(R.id.about_company_info_label_text_view), withText("© I-Teco, 2022"),
                     isDisplayed()));
 
-    public static ViewInteraction versionView = onView(
+    private final ViewInteraction versionView = onView(
             allOf(withId(R.id.about_version_title_text_view), withText("Version:"),
                     isDisplayed()));
 
+    public final ViewInteraction getVersionOfAppView() {
+        return versionView;
+    }
+
+    public ViewInteraction getiTecoLogoView() {
+        return iTecoView;
+    }
+
+    public ViewInteraction getTermsOfUseView() {
+        return termsOfUseView;
+    }
+
+    public int getPrivacyPolicyViewId() {
+        return privacyPolicyViewId;
+    }
+
+    public ViewInteraction getPrivacyPolicyView() {
+        return privacyPolicyView;
+    }
 }

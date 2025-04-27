@@ -10,9 +10,11 @@ import io.qameta.allure.kotlin.Step;
 import ru.iteco.fmhandroid.ui.pageElement.OurMissionPageElement;
 
 public class OurMissionPageSteps {
+
+    private static final OurMissionPageElement ourMissionPageElement = new OurMissionPageElement();
     @Step("Проверка открытия страницы Наша Миссия")
     public static void checkLabelOurMission(){
-        onView(isRoot()).perform(waitForElement(OurMissionPageElement.ourMissionLabelId, 10000));
-        OurMissionPageElement.ourMissionLabelView.check(matches(isDisplayed()));
+        onView(isRoot()).perform(waitForElement(ourMissionPageElement.getOurMissionLabelId(), 10000));
+        ourMissionPageElement.getOurMissionLabel().check(matches(isDisplayed()));
     }
 }

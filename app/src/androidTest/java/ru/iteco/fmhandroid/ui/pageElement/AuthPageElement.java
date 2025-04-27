@@ -11,14 +11,49 @@ import androidx.test.espresso.ViewInteraction;
 import ru.iteco.fmhandroid.R;
 
 public class AuthPageElement {
-    public static ViewInteraction inputLoginField = onView(allOf(withId(R.id.login_edit_text)));
-    public static ViewInteraction inputPasswordField = onView(allOf(withId(R.id.password_edit_text)));
-    public static ViewInteraction enterButton = onView(withId(R.id.enter_button));
-    public static ViewInteraction toastMessageSomethingWrong = onView(withText("Something went wrong. Try again later."));
-    public static ViewInteraction toastMessageEmptyLoginAndPassword = onView(withText("Login and password cannot be empty"));
-    public static ViewInteraction authorizationTextView = onView(allOf(withText("Authorization"), isDisplayed()));
-    public static int enterButtonId = R.id.enter_button;
-    public static int loginTextInputLayoutId = R.id.login_text_input_layout;
-    public static int authorizationTextId = R.id.authorization_text_input_layout;
+    private final ViewInteraction inputLoginField = onView(allOf(withId(R.id.login_edit_text)));
+    private final ViewInteraction inputPasswordField = onView(allOf(withId(R.id.password_edit_text)));
+    private final ViewInteraction enterButton = onView(withId(R.id.enter_button));
+    private final ViewInteraction toastMessageSomethingWrong = onView(withText("Something went wrong. Try again later."));
+    private final ViewInteraction toastMessageEmptyLoginAndPassword = onView(withText("Login and password cannot be empty"));
+    private final ViewInteraction authorizationTextView = onView(allOf(withText("Authorization"), isDisplayed()));
+    private final int enterButtonId = R.id.enter_button;
+    private final int loginTextInputLayoutId = R.id.login_text_input_layout;
+    private final int authorizationTextId = R.id.authorization_text_input_layout;
 
+    public ViewInteraction getInputLoginField() {
+        return inputLoginField;
+    }
+
+    public ViewInteraction getInputPasswordField() {
+        return inputPasswordField;
+    }
+
+    public ViewInteraction getEnterButton() {
+        return enterButton;
+    }
+
+    public ViewInteraction getSomethingWrongMessage() {
+        return toastMessageSomethingWrong;
+    }
+
+    public ViewInteraction getEmptyLoginAndPasswordMessage() {
+        return toastMessageEmptyLoginAndPassword;
+    }
+
+    public ViewInteraction getAuthorizationTextView() {
+        return authorizationTextView;
+    }
+
+    public int getEnterButtonId() {
+        return enterButtonId;
+    }
+
+    public int getLoginTextInputLayoutId() {
+        return loginTextInputLayoutId;
+    }
+
+    public int getAuthorizationTextId() {
+        return authorizationTextId;
+    }
 }

@@ -25,6 +25,7 @@ public class MainTest {
             new ActivityScenarioRule<>(AppActivity.class);
 
     @Test
+    @Description("Тест проверяет переход в раздел 'Наша миссия' и отображение основных элементов")
     public void mainTest() {
         Utils.checkMainPage();
         MainPageSteps.pushOurMissionLabel();
@@ -32,6 +33,7 @@ public class MainTest {
     }
 
     @Test
+    @Description("Тест проверяет раздел 'О приложении', включая отображение политики конфиденциальности, условий использования и информации о версии")
     public void appActivityTest() {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();

@@ -21,22 +21,23 @@ import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.pageElement.AuthPageElement;
 
 public class AuthSteps {
+    private static final AuthPageElement authPageElement = new AuthPageElement();
     @Step("Заполнение поля логина")
     public static void fillLogin(String login) {
         Allure.step("Заполнение поля логина: " + login);
-        onView(isRoot()).perform(waitForElement(AuthPageElement.loginTextInputLayoutId,10000));
-        AuthPageElement.inputLoginField.perform(replaceText(login));
+        onView(isRoot()).perform(waitForElement(authPageElement.getLoginTextInputLayoutId(),10000));
+        authPageElement.getInputLoginField().perform(replaceText(login));
     }
     @Step("Заполнение поля пароля")
     public static void fillPassword(String password) {
         Allure.step("Заполнение поля пароля: " + password);
-        AuthPageElement.inputPasswordField.perform(replaceText(password));
+        authPageElement.getInputPasswordField().perform(replaceText(password));
     }
     @Step("Нажатие кнопки Sign In")
     public static void pushEnterButton(){
         Allure.step("Нажатие кнопки Sign In");
-        onView(isRoot()).perform(waitForElement(AuthPageElement.enterButtonId, 5000));
-        AuthPageElement.enterButton.perform(click());
+        onView(isRoot()).perform(waitForElement(authPageElement.getEnterButtonId(), 5000));
+        authPageElement.getEnterButton().perform(click());
     }
 
     @Step("Проверка сообщения о не пустом пароле и логине")
@@ -45,7 +46,7 @@ public class AuthSteps {
         mActivityScenarioRule.getScenario().onActivity(activity -> {
             decorView[0] = activity.getWindow().getDecorView();
         });
-        AuthPageElement.toastMessageEmptyLoginAndPassword.inRoot(withDecorView(not(is(decorView[0]))))
+        authPageElement.getEmptyLoginAndPasswordMessage().inRoot(withDecorView(not(is(decorView[0]))))
                 .check(matches(isDisplayed()));
     }
     @Step("Проверка сообщения о том, что что-то пошло не так ")
@@ -54,12 +55,12 @@ public class AuthSteps {
         mActivityScenarioRule.getScenario().onActivity(activity -> {
             decorView[0] = activity.getWindow().getDecorView();
         });
-        AuthPageElement.toastMessageSomethingWrong.inRoot(withDecorView(not(is(decorView[0]))))
+        authPageElement.getSomethingWrongMessage().inRoot(withDecorView(not(is(decorView[0]))))
                 .check(matches(isDisplayed()));
     }
 
     @Step("Проверка наличия текста авторизации")
     public static void checkAuthorizationText(){
-        onView(isRoot()).perform(waitForElement(AuthPageElement.authorizationTextId,10000));
+        onView(isRoot()).perform(waitForElement(authPageElement.getAuthorizationTextId(),10000));
     }
 }

@@ -13,18 +13,57 @@ import ru.iteco.fmhandroid.R;
 
 public class MainPageElement {
 
-    public static ViewInteraction burgerMenu = onView(allOf(withId(R.id.main_menu_image_button), withContentDescription("Main menu"),isDisplayed()));
-    public static ViewInteraction aboutBurgerMenu = onView(allOf(withId(android.R.id.title), withText("About"), isDisplayed()));
-    public static ViewInteraction newsBurgerMenu = onView(allOf(withId(android.R.id.title), withText("News"), isDisplayed()));
+    private final ViewInteraction burgerMenu = onView(allOf(withId(R.id.main_menu_image_button), withContentDescription("Main menu"),isDisplayed()));
+    private final ViewInteraction aboutBurgerMenu = onView(allOf(withId(android.R.id.title), withText("About"), isDisplayed()));
+    private final ViewInteraction newsBurgerMenu = onView(allOf(withId(android.R.id.title), withText("News"), isDisplayed()));
 
-    public static ViewInteraction mainLogoView = onView(withId(R.id.trademark_image_view));
-    public static ViewInteraction newsLogoView = onView(allOf(withText("News"), isDisplayed()));
-    public static ViewInteraction ourMissionLogoView = onView(allOf(withId(R.id.our_mission_image_button),
+    private final ViewInteraction mainLogoView = onView(withId(R.id.trademark_image_view));
+    private final ViewInteraction newsLogoView = onView(allOf(withText("News"), isDisplayed()));
+    private final ViewInteraction ourMissionLogoView = onView(allOf(withId(R.id.our_mission_image_button),
             withContentDescription("Our Mission")));
-    public static ViewInteraction logOutButton = onView(
+    private final ViewInteraction logOutButton = onView(
             allOf(withId(android.R.id.title), withText("Log out"), isDisplayed()));
-    public static ViewInteraction authorizationBlock = onView(allOf(withId(R.id.authorization_image_button), isDisplayed()));
-    public static int mainMenuImageButtonId = R.id.main_menu_image_button;
-    public static int logOutButtonId = R.id.authorization_logout_menu_item;
+    private final ViewInteraction authorizationBlock = onView(allOf(withId(R.id.authorization_image_button), isDisplayed()));
+    private final int mainMenuImageButtonId = R.id.main_menu_image_button;
+    private final int logOutButtonId = R.id.authorization_logout_menu_item;
 
+    public ViewInteraction getBurgerMenu() {
+        return burgerMenu;
+    }
+
+    public ViewInteraction getAboutInBurgerMenu() {
+        return aboutBurgerMenu;
+    }
+
+    public ViewInteraction getNewsInBurgerMenu() {
+        return newsBurgerMenu;
+    }
+
+    public ViewInteraction getMainLogoView() {
+        return mainLogoView;
+    }
+
+    public ViewInteraction getNewsLogoView() {
+        return newsLogoView;
+    }
+
+    public ViewInteraction getOurMissionLogoView() {
+        return ourMissionLogoView;
+    }
+
+    public ViewInteraction getLogOutButton() {
+        return logOutButton;
+    }
+
+    public ViewInteraction getAuthorizationBlockLogo() {
+        return authorizationBlock;
+    }
+
+    public int getMainMenuImageButtonId() {
+        return mainMenuImageButtonId;
+    }
+
+    public int getLogOutButtonId() {
+        return logOutButtonId;
+    }
 }

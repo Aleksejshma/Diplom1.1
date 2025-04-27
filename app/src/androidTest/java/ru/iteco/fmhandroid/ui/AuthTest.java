@@ -28,6 +28,7 @@ public class AuthTest {
     public static final String PASSWORD_INVALID = "pass2";
 
     @Test
+    @Description("Тест проверяет, что пользователь не может авторизоваться с пустыми полями")
     public void testLoginWithEmptyFieldsShowsToast() {
         Utils.checkAuthPage();
         AuthSteps.pushEnterButton();
@@ -35,6 +36,7 @@ public class AuthTest {
     }
 
     @Test
+    @Description("Тест проверяет, что пользователь не может авторизоваться с невалидными логином и паролем")
     public void testInvalidLoginAndPassword() {
         Utils.checkAuthPage();
         AuthSteps.fillLogin(LOGIN_INVALID);
@@ -44,6 +46,7 @@ public class AuthTest {
     }
 
     @Test
+    @Description("Тест проверяет, что пользователь может авторизоваться с валидными логином и паролем и разлогиниться")
     public void validAuthTestAndLogOut()  {
         Utils.checkAuthPage();
         AuthSteps.fillLogin(LOGIN_VALID);
@@ -57,6 +60,7 @@ public class AuthTest {
     }
 
     @Test
+    @Description("Тест проверяет, что пользователь может авторизоваться с валидными логином и паролем")
     public void authorizationTest_ValidLoginAndPassword_Success() {
         Utils.checkAuthPage();
         AuthSteps.fillLogin(LOGIN_VALID);

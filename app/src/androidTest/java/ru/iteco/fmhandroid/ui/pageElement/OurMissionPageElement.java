@@ -11,9 +11,17 @@ import androidx.test.espresso.ViewInteraction;
 import ru.iteco.fmhandroid.R;
 
 public class OurMissionPageElement {
-    public static ViewInteraction ourMissionLabelView = onView(
+    private final ViewInteraction ourMissionLabelView = onView(
             allOf(withId(R.id.our_mission_title_text_view), withText("Love is all"),
                     isDisplayed()));
 
-    public static int ourMissionLabelId = R.id.our_mission_title_text_view;
+    private final int ourMissionLabelId = R.id.our_mission_title_text_view;
+
+    public ViewInteraction getOurMissionLabel() {
+        return ourMissionLabelView;
+    }
+
+    public int getOurMissionLabelId() {
+        return ourMissionLabelId;
+    }
 }

@@ -31,6 +31,7 @@ public class NewsTest {
     public static final String NEWS_TITLE_UPDATE = "Update title test";
 
     @Test
+    @Description("Тест проверяет переход на страницу новостей и отображение основных элементов управления")
     public void goToNewsPageTest() {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();
@@ -41,6 +42,7 @@ public class NewsTest {
     }
 
     @Test
+    @Description("Тест проверяет создание новой новости с валидными данными")
     public void createNewsTest() throws InterruptedException {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();
@@ -61,6 +63,7 @@ public class NewsTest {
     }
 
     @Test
+    @Description("Тест проверяет удаление созданной новости")
     public void deleteNewsTest() {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();
@@ -84,6 +87,7 @@ public class NewsTest {
     }
 
     @Test
+    @Description("Тест проверяет переход на страницу 'О приложении' из раздела новостей")
     public void goToAboutPageTest() {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();
@@ -97,6 +101,7 @@ public class NewsTest {
     }
 
     @Test
+    @Description("Тест проверяет редактирование существующей новости")
     public void editNewsTest() {
         Utils.checkMainPage();
         MainPageSteps.pushBurger();

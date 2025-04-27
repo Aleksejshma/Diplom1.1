@@ -11,41 +11,42 @@ import io.qameta.allure.kotlin.Step;
 import ru.iteco.fmhandroid.ui.pageElement.MainPageElement;
 
 public class MainPageSteps {
+    private static final MainPageElement mainPageElement = new MainPageElement();
     @Step("Проверка надпись News на главной странице")
     public static void checkNewsLabel(){
-        onView(isRoot()).perform(waitForElement(MainPageElement.mainMenuImageButtonId,10000));
-        MainPageElement.newsLogoView.check(matches(isDisplayed()));
+        onView(isRoot()).perform(waitForElement(mainPageElement.getMainMenuImageButtonId(),10000));
+        mainPageElement.getNewsLogoView().check(matches(isDisplayed()));
     }
     @Step("Проверка кнопки \"Наша миссия\" на главной странице")
     public static void checkOurMissionLabel(){
-        MainPageElement.ourMissionLogoView.check(matches(isDisplayed()));
+        mainPageElement.getOurMissionLogoView().check(matches(isDisplayed()));
     }
 
     @Step("Нажатие на кнопку \"Наша миссия\" на главной странице")
     public static void pushOurMissionLabel(){
-        onView(isRoot()).perform(waitForElement(MainPageElement.mainMenuImageButtonId,10000));
-        MainPageElement.ourMissionLogoView.perform(click());
+        onView(isRoot()).perform(waitForElement(mainPageElement.getMainMenuImageButtonId(),10000));
+        mainPageElement.getOurMissionLogoView().perform(click());
     }
     @Step("Нажатие на кнопку Log Out")
     public static void pushLogOutButton(){
-        MainPageElement.authorizationBlock.perform(click());
-        MainPageElement.logOutButton.perform(click());
+        mainPageElement.getAuthorizationBlockLogo().perform(click());
+        mainPageElement.getLogOutButton().perform(click());
     }
 
     @Step("Нажатие на бургер")
     public static void pushBurger(){
-        onView(isRoot()).perform(waitForElement(MainPageElement.mainMenuImageButtonId,10000));
-        MainPageElement.burgerMenu.perform(click());
+        onView(isRoot()).perform(waitForElement(mainPageElement.getMainMenuImageButtonId(),10000));
+        mainPageElement.getBurgerMenu().perform(click());
     }
 
     @Step("Нажатие на About в бургер")
     public static void pushAboutBurger(){
-        MainPageElement.aboutBurgerMenu.perform(click());
+        mainPageElement.getAboutInBurgerMenu().perform(click());
     }
 
     @Step("Нажатие на News в бургер")
     public static void pushNewsBurger(){
-        MainPageElement.newsBurgerMenu.perform(click());
+        mainPageElement.getNewsInBurgerMenu().perform(click());
     }
 
 
