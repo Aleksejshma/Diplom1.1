@@ -3,8 +3,8 @@ package ru.iteco.fmhandroid.ui.utils;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
-import static ru.iteco.fmhandroid.ui.AuthTest.LOGIN_VALID;
-import static ru.iteco.fmhandroid.ui.AuthTest.PASSWORD_VALID;
+import static ru.iteco.fmhandroid.ui.tests.AuthTest.LOGIN_VALID;
+import static ru.iteco.fmhandroid.ui.tests.AuthTest.PASSWORD_VALID;
 
 import android.view.View;
 
